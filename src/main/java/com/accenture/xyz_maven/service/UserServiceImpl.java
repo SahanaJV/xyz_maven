@@ -26,7 +26,6 @@ public class UserServiceImpl implements UserService
     @Override
     public Response validateLogin(UserBean userBean) throws Exception 
     {
-        System.out.println("Hello");
         BCryptPasswordEncoder bEncoder = new BCryptPasswordEncoder();
         Response loginResponse = new Response();
         UserEntity userEntity = new UserEntity();
@@ -84,6 +83,7 @@ public class UserServiceImpl implements UserService
                 newUserResponse.setStatus(true);
             }
             else
+            
             {
                 newUserResponse.setMessage(MessageUtil.getMessage("user.not.unique"));
                 newUserResponse.setStatus(false);
